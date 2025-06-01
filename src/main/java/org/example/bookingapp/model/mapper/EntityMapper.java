@@ -1,4 +1,13 @@
 package org.example.bookingapp.model.mapper;
 
-public interface EntityMapper {
+import java.util.List;
+
+public interface EntityMapper<D, E> {
+    E toEntity(D d);
+
+    List<E> toEntityList(List<D> d);
+
+    D toDto(E e);
+
+    List<D> toDtoList(List<E> e);
 }
